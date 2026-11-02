@@ -11,7 +11,7 @@ then set `DRY_RUN = false` and run again.
 | Order | Script | Fixes | Tested |
 |---|---|---|---|
 | 1 | `relink_primary_content.apex` | Controlled Document Primary Content (`Content_Reference__c`, text) still holds the deleted file's Id. Sets it to the restored file linked to the document. | Passed 11/2/2026 (Activities 171, 179) |
-| 2 | `relink_source_id.apex` | Source Id / Source Name text fields on Investigation, Action, Effectiveness Review and Finding Response still point to the deleted parent (e.g. old complaint number). Copies the relinked lookup's Id and Name. | Built 11/2/2026, testing |
+| 2 | `relink_source_id.apex` | Source Id / Source Name text fields on Investigation, Action, Effectiveness Review and Finding Response still point to the deleted parent (e.g. old complaint number). Copies the relinked lookup's Id and Name. | Passed 11/2/2026 (INV-0000000073, Activity 180) |
 | 3 | `reembed_rich_text_images.apex` | Rich text images come back as "Image Not Available". Re-embeds the image files attached to the same record, matched by order. Needs the image attached as a file as well as embedded. | Passed 11/2/2026 (NC-000160) |
 
 Settings at the top of each script:
