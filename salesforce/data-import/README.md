@@ -8,6 +8,7 @@ The full procedure, with gotchas, is in the runbook doc "CQ Config Data Migratio
 | `sfdmu_questions_export.json` | SFDMU config for Impact Assessment questions: CQ Tasks (read-only, matched by Name) → Task Questions (upsert on Task + Name) → Answer Options (insert). Scoped to the 13 Change Order tasks. | Passed 11/4/2026 (master to basfplay: 42 Questions, 76 Answer Options) |
 | `set_result_type.apex` | Run after the Questions job: sets the 4 Regulatory Impact questions to the "Yes/No/NA" Result Type (left out of the SFDMU run). | Passed 11/4/2026 (basfplay) |
 | `sfdmu_cause_codes_export.json` | SFDMU config for cause codes: Categories (upsert on Name, existing ones left untouched) → Sub-Categories (upsert on Category + Name) → Codes (insert). | Passed 11/4/2026 (master to basfplay: 11 / 45 / 77 inserted) |
+| `cq-forms/` | Four CQ Form designs (`.cqf-json`) plus `load_checklist_questions.apex` for their checklist questions. See `cq-forms/README.md`. | Passed 11/5/2026 (master to basfplay) |
 | `hazard_icons.ps1` | Copies the icon image on each Hazard or Control from a source org to a target org: downloads the files, creates them on the matching target records (matched by Hazard Name / Control Name) and sets `cqext__Icon__c`. | Passed 11/5/2026 (master to basfplay: 20 Hazards, Controls) |
 
 ## SFDMU jobs
