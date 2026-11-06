@@ -1,0 +1,21 @@
+{
+  "allOrNone": true,
+  "objects": [
+    {
+      "query": "SELECT Id, Name, compliancequest__Description__c FROM compliancequest__SQX_Root_Cause_Category__c",
+      "operation": "Upsert",
+      "externalId": "Name",
+      "skipExistingRecords": true
+    },
+    {
+      "query": "SELECT Id, Name, compliancequest__SQX_Root_Cause_Category__c, compliancequest__Description__c FROM compliancequest__SQX_Root_Cause_Sub_Category__c",
+      "operation": "Upsert",
+      "externalId": "compliancequest__SQX_Root_Cause_Category__r.Name;Name"
+    },
+    {
+      "query": "SELECT Id, Name, compliancequest__SQX_Root_Cause_Sub_Category__c, compliancequest__Description__c FROM compliancequest__SQX_Root_Cause_Code__c",
+      "operation": "Insert",
+      "externalId": "Name"
+    }
+  ]
+}

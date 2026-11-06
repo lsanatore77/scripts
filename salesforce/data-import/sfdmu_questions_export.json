@@ -1,0 +1,20 @@
+{
+  "allOrNone": true,
+  "objects": [
+    {
+      "query": "SELECT Id, Name FROM compliancequest__SQX_Task__c WHERE Name IN ('Man Hours','Impact Assessment for Making Changes','Gain approval','Impact on Product Quality','Regulatory Impact','Assess Risk','Evaluate New Document Creation','Impact Assessment for MFG Process Change','Impact on Regulatory Compliance','Impact Assessment for Production Part Changes','Impact Assessment for General Design Changes','Evaluation of Documentation','Initial Change Assessment')",
+      "operation": "Readonly",
+      "externalId": "Name"
+    },
+    {
+      "query": "SELECT Id, Name, RecordTypeId, compliancequest__SQX_Task__c, compliancequest__Allow_Comment__c, compliancequest__Answer_Type__c, compliancequest__Custom_Component_Name__c, compliancequest__Guide__c, compliancequest__Picklist_Category__c, compliancequest__QuestionText__c, compliancequest__SQX_Next_Question__c FROM compliancequest__SQX_Task_Question__c WHERE compliancequest__SQX_Task__r.Name IN ('Man Hours','Impact Assessment for Making Changes','Gain approval','Impact on Product Quality','Regulatory Impact','Assess Risk','Evaluate New Document Creation','Impact Assessment for MFG Process Change','Impact on Regulatory Compliance','Impact Assessment for Production Part Changes','Impact Assessment for General Design Changes','Evaluation of Documentation','Initial Change Assessment')",
+      "operation": "Upsert",
+      "externalId": "compliancequest__SQX_Task__r.Name;Name"
+    },
+    {
+      "query": "SELECT Id, Name, compliancequest__Question__c, compliancequest__Actionable__c, compliancequest__Due_In_Days__c, compliancequest__Next_Question__c, compliancequest__Option_Value__c, compliancequest__RegulatoryBody__c, compliancequest__Report_Name__c, compliancequest__Reportable__c FROM compliancequest__SQX_Answer_Option__c WHERE compliancequest__Question__r.compliancequest__SQX_Task__r.Name IN ('Man Hours','Impact Assessment for Making Changes','Gain approval','Impact on Product Quality','Regulatory Impact','Assess Risk','Evaluate New Document Creation','Impact Assessment for MFG Process Change','Impact on Regulatory Compliance','Impact Assessment for Production Part Changes','Impact Assessment for General Design Changes','Evaluation of Documentation','Initial Change Assessment')",
+      "operation": "Insert",
+      "externalId": "Name"
+    }
+  ]
+}
